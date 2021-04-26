@@ -1,0 +1,67 @@
+* {
+    margin: 0px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-image: url("https://en.nn.najah.edu/media/uploads/weblog/2020/09/01/new-history-forecast-bulk.png");
+    flex-wrap: wrap;
+    background-size: cover;
+    height: fit-content;
+    background-position: bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.container {
+    flex-direction: row;
+}
+
+input {
+    border: none;
+    border-radius: 7px;
+    background-color: rgba(225, 225, 225, 0.7);
+}
+
+input:focus {
+    border: none;
+    background-color: rgba(225, 225, 225, 1);
+}
+
+button {
+    border-radius: 7px;
+    background-color: #313131;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+}
+
+button:hover {
+    transition: 0.3s;
+    opacity: 1
+    
+}
+
+.head {
+    display: flex;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    font-size: 2.5rem;
+}
+
+h3 {
+    color: rgb(0, 0, 0);
+}
+
+footer {
+    size: 300px;
+color: steelblue;
+}

@@ -19,6 +19,10 @@ body {
     flex-direction: row;
 }
 
+/* .day {
+    flex-direction: row;
+} */
+
 input {
     border: none;
     border-radius: 7px;
@@ -50,6 +54,16 @@ button:hover {
 
 .head {
     display: flex;
+}
+
+.day {
+    background-image: url(https://static01.nyt.com/images/2014/12/11/technology/personaltech/11machin-illo/11machin-illo-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale);
+    /* flex-wrap: wrap; */
+    background-size: 15%;
+    height: fit-content;
+    /* background-position: bottom; */
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
 }
 
 h1 {

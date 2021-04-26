@@ -15,8 +15,44 @@ body {
     background-repeat: no-repeat;
 }
 
+.head {
+    display: flex;
+}
+
 .container {
-    flex-direction: row;
+    position: relative;
+    min-height: 100vh;
+    padding: 5px;
+    margin: 0px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.search-area {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    width: 50%; 
+    float:left; 
+    height:90vh;
+}
+
+.weather-container {
+    display: flex;
+    /* justify-content: flex-end; */
+    width: 50%; 
+    float:right; 
+    height:90vh;
+
+}
+
+#icon {
+    background-size: cover;
+    height: fit-content;
+    background-position: bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 /* .day {
@@ -52,18 +88,15 @@ button:hover {
     
 }
 
-.head {
-    display: flex;
-}
-
-.day {
-    background-image: url(https://static01.nyt.com/images/2014/12/11/technology/personaltech/11machin-illo/11machin-illo-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale);
+.day1, .day2, .day3, .day4, .day5 {
+    background-image: url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNlZSUyMGZyb20lMjB0aGUlMjBza3l8ZW58MHx8MHx8&w=1000&q=80);
     /* flex-wrap: wrap; */
-    background-size: 15%;
+    background-size: 100%;
     height: fit-content;
-    /* background-position: bottom; */
-    /* background-attachment: fixed; */
+    background-position: top;
+    background-attachment: fixed;
     background-repeat: no-repeat;
+    border-radius: 5px;
 }
 
 h1 {
@@ -71,11 +104,19 @@ h1 {
     font-size: 2.5rem;
 }
 
-h3 {
+h2 {
     color: rgb(0, 0, 0);
+    font-size: 1.5rem;
 }
 
-footer {
-    size: 300px;
-color: steelblue;
+h3 {
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: rem;
 }

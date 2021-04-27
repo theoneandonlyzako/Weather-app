@@ -47,7 +47,7 @@ body {
 
 }
 
-.icon {
+#icon {
     background-size: cover;
     height: fit-content;
     background-position: bottom;
@@ -68,7 +68,6 @@ input {
 input:focus {
     border: none;
     background-color: rgba(225, 225, 225, 1);
-    outline: none;
 }
 
 button {
@@ -81,7 +80,6 @@ button {
     font-size: 16px;
     margin: 4px 2px;
     opacity: 0.6;
-    outline: none;
 }
 
 button:hover {

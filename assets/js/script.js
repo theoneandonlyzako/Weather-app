@@ -22,9 +22,9 @@
     for(let i=0; i < 6; i++) {
       var container = $('.weather-container')
       var parentDiv = $('<div>')
-      var cityEl = $('<h2 class"city"></h2>')
+      var cityEl = $('<h2 class="city"></h2>')
       var iconDiv = $('<div id="icon">')
-      var imgEl = $('<img src="https://img.icons8.com/officel/30/000000/sun.png">')
+      var imgEl = $('<img class="icon">')
       var tempDiv = $('<div class="temp">')
       var humidityEl = $('<h3>Humidity</h3>')
       var windEl = $('<h3>Wind</h3>')
@@ -37,15 +37,17 @@
       tempDiv .append(windEl)
       tempDiv .append(uvEl)
       parentDiv .append(tempDiv)
+      
 
       container .append(parentDiv)
       // console.log(imgIcon);
       
-    }
-    document.querySelector(".city").innerText = "weather in" + name;
+    } 
 
+    for(let i=0; i < 6; i++) {
+    $(".city").attr("innerText", "weather in " + name);
     $(".icon").attr("src","http://openweathermap.org/img/wn/" + icon + ".png");
-  
+    }
     // document.querySelector(".description").innerText = "weather in" + name;
     // document.querySelector(".temp").innerText = "weather in" + name;
     // document.querySelector(".humidity").innerText = "weather in" + name;

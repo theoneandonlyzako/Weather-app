@@ -21,14 +21,15 @@
     
     for(let i=0; i < 6; i++) {
       var container = $('.weather-container')
-      var parentDiv = $('<div>')
+      var parentDiv = $('<div class="day">')
       var cityEl = $('<h2 class="city"></h2>')
       var iconDiv = $('<div id="icon">')
+      var currentTemp = $('<div class="temp"></div>')
       var imgEl = $('<img class="icon">')
       var tempDiv = $('<div class="temp">')
-      var humidityEl = $('<h3>Humidity</h3>')
-      var windEl = $('<h3>Wind</h3>')
-      var uvEl = $('<h3>UV</h3>')
+      var humidityEl = $('<h3 class="humidity"></h3>')
+      var windEl = $('<h3 class="wind"></h3>')
+      var uvEl = $('<h3 class="uv"></h3>')
       
       parentDiv .append(cityEl)
       iconDiv .append(imgEl)
@@ -42,8 +43,11 @@
       container .append(parentDiv)
       // console.log(imgIcon);
 
-      $(".city").attr("innerText", "weather in " + name);
+      $(".city").text(name);
       $(".icon").attr("src","http://openweathermap.org/img/wn/" + icon + ".png");
+      $(".humidity").text(name);
+      $(".wind").text(name);
+      $(".uv").text(name);
     } 
 
     // for(let i=0; i < 6; i++) {

@@ -90,15 +90,17 @@ button:hover {
     
 }
 
-.day1, .day2, .day3, .day4, .day5 {
+.day {
+    margin: .5px;
+    padding: 2px;
     background-image: url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNlZSUyMGZyb20lMjB0aGUlMjBza3l8ZW58MHx8MHx8&w=1000&q=80);
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     background-size: 100%;
     height: fit-content;
     background-position: top;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 h1 {

@@ -21,7 +21,9 @@ body {
 
 .container {
     position: relative;
+    justify-content: center;
     min-height: 100vh;
+    max-width: 100vw;
     padding: 5px;
     margin: 0px;
     flex-direction: column;
@@ -31,20 +33,24 @@ body {
 .search-area {
     display: flex;
     flex-direction: column;
-
     justify-content: flex-start;
-    width: 50%; 
+    width: 20%; 
     float:left; 
     height:90vh;
 }
 
 .weather-container {
     display: flex;
-    /* justify-content: flex-end; */
-    width: 50%; 
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 80%; 
     float:right; 
     height:90vh;
+}
 
+.day {
+    min-width: 150px;
+    max-width: 200px;
 }
 
 .icon {
@@ -93,7 +99,8 @@ button:hover {
 .day {
     margin: .5px;
     padding: 2px;
-    background-image: url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNlZSUyMGZyb20lMjB0aGUlMjBza3l8ZW58MHx8MHx8&w=1000&q=80);
+    background-color: royalblue;
+    /* background-image: url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNlZSUyMGZyb20lMjB0aGUlMjBza3l8ZW58MHx8MHx8&w=1000&q=80); */
     flex-wrap: wrap;
     background-size: 100%;
     height: fit-content;
@@ -109,13 +116,20 @@ h1 {
 }
 
 h2 {
-    color: rgb(0, 0, 0);
+    color: rgb(229, 229, 229);
     font-size: 1.5rem;
+    text-shadow: rgba(0, 0, 0, .5);
 }
 
 h3 {
-    color: rgb(0, 0, 0);
+    color: rgb(229, 229, 229);
     font-size: 1rem;
+    text-shadow: rgba(0, 0, 0, .5);
+}
+
+.temp {
+    font-size: 3rem;
+    color: white;
 }
 
 #footer {

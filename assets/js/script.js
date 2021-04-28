@@ -19,25 +19,26 @@
     const { speed } = data.wind;
     console.log(name, icon, description, temp, humidity, speed);
     
-    for(let i=0; i < 6; i++) {
+    for(let i=0; i < 5; i++) {
       var container = $('.weather-container')
       var parentDiv = $('<div class="day">')
       var cityEl = $('<h2 class="city"></h2>')
       var iconDiv = $('<div id="icon">')
-      var currentTemp = $('<div class="temp"></div>')
+      var tempDiv = $('<div class="temp">75°</div>')
       var imgEl = $('<img class="icon">')
-      var tempDiv = $('<div class="temp">')
+      var barDiv = $('<div class="bar">')
       var humidityEl = $('<h3 class="humidity"></h3>')
       var windEl = $('<h3 class="wind"></h3>')
       var uvEl = $('<h3 class="uv"></h3>')
       
       parentDiv .append(cityEl)
-      iconDiv .append(imgEl)
+      iconDiv .append(imgEl)      
       parentDiv .append(iconDiv)
-      tempDiv .append(humidityEl)
-      tempDiv .append(windEl)
-      tempDiv .append(uvEl)
       parentDiv .append(tempDiv)
+      barDiv .append(humidityEl)
+      barDiv .append(windEl)
+      barDiv .append(uvEl)
+      parentDiv .append(barDiv)
       
 
       container .append(parentDiv)

@@ -41,13 +41,15 @@
 
       container .append(parentDiv)
       // console.log(imgIcon);
-      
+
+      $(".city").attr("innerText", "weather in " + name);
+      $(".icon").attr("src","http://openweathermap.org/img/wn/" + icon + ".png");
     } 
 
-    for(let i=0; i < 6; i++) {
-    $(".city").attr("innerText", "weather in " + name);
-    $(".icon").attr("src","http://openweathermap.org/img/wn/" + icon + ".png");
-    }
+    // for(let i=0; i < 6; i++) {
+    // $(".city").attr("innerText", "weather in " + name);
+    // $(".icon").attr("src","http://openweathermap.org/img/wn/" + icon + ".png");
+    // }
     // document.querySelector(".description").innerText = "weather in" + name;
     // document.querySelector(".temp").innerText = "weather in" + name;
     // document.querySelector(".humidity").innerText = "weather in" + name;

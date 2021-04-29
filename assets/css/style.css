@@ -99,7 +99,7 @@ header {
     width: 50%;
 }
 
-.current {
+/* .current {
     /* max-width: 50%;
     margin: .5px;
     padding: 2px; */
@@ -110,7 +110,7 @@ header {
     background-attachment: fixed;
     background-repeat: no-repeat; */
     border-radius: 7px;
-}
+} */
 
 .day {
     min-width: 100px;

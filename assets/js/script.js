@@ -1,23 +1,33 @@
 // let weather = {
   $(window).on("load", function () {
   // console.log("apikey");
-  
+  // debugger;
+  // $('.current').css('display','none');
+
   var apiKey = "ede1a7baf3cbf299883575c9bf004bbc"
   function fetchWeather(city) {
    return fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey
+     "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + apiKey
+    // "https://api.openweathermap.org/data/2.5/forecast?zip=" + city + "&units=imperial&appid=" + apiKey,
+    // "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey
+    // "https://api.openweathermap.org/data/2.5/onecall?lat=" + + "&lon=" + + "&exclude=hourly,minutely&appid=" + apiKey
+
     )
       .then((response) => response.json())
       .then((data) => displayWeather(data));
   }
+
   function displayWeather(data) {
-    console.log("displllll");
+    console.log("current day displayed");
     
-    const { name } = data;
-    const { icon, description } = data.weather[0];
-    const { temp, humidity } = data.main;
-    const { speed } = data.wind;
-    console.log(name, icon, description, temp, humidity, speed);
+    // stores values from api
+    const { name } = data.city;
+    const { icon } = data.list[0].weather[0];
+    const { temp, humidity } = data.list[0].main;
+    const { speed } = data.list[0].wind;
+    // const { lat } = 
+    // const { lon } = 
+    console.log(name, icon, temp, humidity, speed);
 
     // Dynamically builds the current temp area
     var container = $('.current')
@@ -44,6 +54,14 @@
 
     // Dynamically builds the 5 day forcast
     for(let i=0; i < 5; i++) {
+       // stores values from api
+    const { name } = data.city;
+    const { icon } = data.list[0].weather[0];
+    const { temp, humidity } = data.list[0].main;
+    const { speed } = data.list[0].wind;
+    // const { lat } = 
+    // const { lon } = 
+    console.log(name, icon, temp, humidity, speed);
       var container = $('.weather-container')
       var parentDiv = $('<div class="day">')
       var cityEl = $('<h2 class="city"></h2>')
@@ -87,7 +105,8 @@
   }
 
   // fetches the weather when btn is clicked
-  $("#save-btn").on("click", function() {
+  $("#save-btn").on("click", function(event) {
+    event.preventDefault();
     var searchResult = $("#cityInput").val()
     fetchWeather(searchResult)
     console.log(searchResult);

@@ -48,11 +48,6 @@ body {
     height:90vh;
 }
 
-.day {
-    min-width: 150px;
-    max-width: 200px;
-}
-
 .icon {
     background-size: cover;
     height: fit-content;
@@ -96,13 +91,36 @@ button:hover {
     
 }
 
+header {
+    display: flex;
+}
+
+.head {
+    width: 50%;
+}
+
+.current {
+    /* max-width: 50%;
+    margin: .5px;
+    padding: 2px; */
+    background-color: royalblue;
+    /* flex-wrap: wrap; */
+    /* height: fit-content; */
+    /* background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat; */
+    border-radius: 7px;
+}
+
 .day {
+    min-width: 100px;
+    max-width: 200px;
     margin: .5px;
     padding: 2px;
     background-color: royalblue;
     /* background-image: url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNlZSUyMGZyb20lMjB0aGUlMjBza3l8ZW58MHx8MHx8&w=1000&q=80); */
     flex-wrap: wrap;
-    background-size: 100%;
+    /* background-size: 100%; */
     height: fit-content;
     background-position: top;
     background-attachment: fixed;
@@ -127,8 +145,12 @@ h3 {
     text-shadow: rgba(0, 0, 0, .5);
 }
 
+.weather-header {
+    color: rgb(0, 0, 0);
+}
+
 .temp {
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
 }
 

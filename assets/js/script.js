@@ -1,8 +1,6 @@
 // let weather = {
   $(window).on("load", function () {
-  // console.log("apikey");
-  // debugger;
-  // $('.current').css('display','none');
+  console.log("Fresh Window loaded");
 
   var apiKey = "ede1a7baf3cbf299883575c9bf004bbc"
   function fetchWeather(city) {
@@ -51,48 +49,64 @@
     parentDiv .append(barDiv)
 
     container .append(parentDiv)
-
-    // Dynamically builds the 5 day forcast
-    for(let i=0; i < 5; i++) {
-       // stores values from api
-    const { name } = data.city;
-    const { icon } = data.list[0].weather[0];
-    const { temp, humidity } = data.list[0].main;
-    const { speed } = data.list[0].wind;
-    // const { lat } = 
-    // const { lon } = 
+    
+    fiveDay()
+    
+    function fiveDay(data) {
+      for(let i=0; i < 5; i++) {
+    // stores values from api
+    // const { name } = data.city;
+    // const { icon } = data.list[1].weather[0];
+    // const { temp, humidity } = data.list[1].main;
+    // const { speed } = data.list[1].wind;
+ 
     console.log(name, icon, temp, humidity, speed);
-      var container = $('.weather-container')
-      var parentDiv = $('<div class="day">')
-      var cityEl = $('<h2 class="city"></h2>')
-      var iconDiv = $('<div id="icon">')
-      var tempDiv = $('<div class="temp">75°</div>')
-      var imgEl = $('<img class="icon">')
-      var barDiv = $('<div class="bar">')
-      var humidityEl = $('<h3 class="humidity"></h3>')
-      var windEl = $('<h3 class="wind"></h3>')
-      var uvEl = $('<h3 class="uv"></h3>')
-      
-      parentDiv .append(cityEl)
-      iconDiv .append(imgEl)      
-      parentDiv .append(iconDiv)
-      parentDiv .append(tempDiv)
-      barDiv .append(humidityEl)
-      barDiv .append(windEl)
-      barDiv .append(uvEl)
-      parentDiv .append(barDiv)
-      
+    console.log([i]);
 
-      container .append(parentDiv)
-      // console.log(imgIcon);
+     console.log(name, icon, temp, humidity, speed);
+       var container = $('.weather-container')
+       var parentDiv = $('<div class="day">')
+       var cityEl = $('<h2 class="city"></h2>')
+       var iconDiv = $('<div id="icon">')
+       var tempDiv = $('<div class="temp">75°</div>')
+       var imgEl = $('<img class="icon">')
+       var barDiv = $('<div class="bar">')
+       var humidityEl = $('<h3 class="humidity"></h3>')
+       var windEl = $('<h3 class="wind"></h3>')
+       var uvEl = $('<h3 class="uv"></h3>')
+       
+       parentDiv .append(cityEl)
+       iconDiv .append(imgEl)      
+       parentDiv .append(iconDiv)
+       parentDiv .append(tempDiv)
+       barDiv .append(humidityEl)
+       barDiv .append(windEl)
+       barDiv .append(uvEl)
+       parentDiv .append(barDiv)
+       
+ 
+       container .append(parentDiv)
+       // console.log(imgIcon);
+ 
+       $(".city").text(name);
+       $(".temp").text(temp+"°");
+       $(".icon").attr("src","http://openweathermap.org/img/wn/" + icon + ".png");
+       $(".humidity").text("humidity "+humidity);
+       $(".wind").text("wind "+speed);
+       // $(".uv").text(uv);
 
-      $(".city").text(name);
-      $(".temp").text(temp+"°");
-      $(".icon").attr("src","http://openweathermap.org/img/wn/" + icon + ".png");
-      $(".humidity").text("humidity "+humidity);
-      $(".wind").text("wind "+speed);
-      // $(".uv").text(uv);
-    } 
+     }
+     localStorage.setItem("histName", name);
+     var historyName = localStorage.getItem("histName", name);
+     console.log(historyName);
+
+     var histContainer = $('.history-area')
+    //  var histDiv = $('<div class="day">')
+     var histEl = $('<button class="hist-btn"></button>')
+     histContainer.append(histEl)
+    }
+    // Dynamically builds the 5 day forcast
+   
 
     // for(let i=0; i < 6; i++) {
     // $(".city").attr("innerText", "weather in " + name);
@@ -111,6 +125,8 @@
     fetchWeather(searchResult)
     console.log(searchResult);
   })
+
+  
   // fetchWeather("benicia")
 })
 

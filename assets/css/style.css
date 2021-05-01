@@ -77,6 +77,7 @@ body {
 .popular {
     background-color: rgba(0, 0, 0, .2);
     border-radius: 8px;
+    max-width: 200px;
 }
 
 .current {

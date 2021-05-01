@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Weather App</title>
 </head>
@@ -14,39 +16,48 @@
     <div class="container" id=current-temp>
 
         <header>
-            <h1 class="head">
-                5 Day Forcast
+            <h1 class="head" id="head">
+               5 Day forecast Weather app
             </h1>
 
         </header>
 
         <div class="search-area">
 
-            <div class="current">
-
-            </div>
-
             <div class="text-input">
                 <input placeholder="enter city" type="text" class="text-area" id="cityInput">
                 <button class="btn" id="save-btn">Search City</button>
             </div>
 
-            <div class="history-area">
-                <h2 class="history">
-                    Your History
-                </h2>
-            </div>
+            
 
             <div class="popular">
                 <h2>
                     Popular cities
                 </h2>
+                <button class="btn" id="sf-btn">San Francisco</button>
+                <button class="btn" id="la-btn">Los Angeles</button>
+                <button class="btn" id="ny-btn">New York City</button>
+                <button class="btn" id="dv-btn">Denver</button>
 
                 <div class="popular-container"></div>
             </div>
+
+            <div class="history-area">
+                <h2 class="history">
+                   Your History
+                </h2>
+                
+            </div>
+
+        </div>
+
+        <div class="current">
+
         </div>
 
         <div class="weather-container">
+
 
         </div>
 

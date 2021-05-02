@@ -6,6 +6,7 @@ $(window).on("load", function () {
   // console.log("Fresh Window loaded");
 
   var apiKey = "ede1a7baf3cbf299883575c9bf004bbc"
+  // fetches api info
   function fetchWeather(city) {
 
     fetch(
@@ -21,6 +22,7 @@ $(window).on("load", function () {
     )
       .then((response) => response.json())
       .then((data) => fiveDay(data));
+      
   }
 
   // displays current
@@ -72,9 +74,9 @@ $(window).on("load", function () {
       //  console.log(data.list.dt_txt);
       var count = 1;
       // stores values from api
-      var name = data.list[i].dt_txt;
-      // .format('dd-m-yy');
-      // console.log(name);
+      var name = data.list[i].dt_txt
+      // .dateFormat('dd-mm-yy');
+      console.log(name);
       var icon = data.list[i].weather[0].icon;
       var temp = data.list[0].main.temp;
       var humidity = data.list[0].main.humidity;
@@ -150,7 +152,7 @@ $(window).on("load", function () {
     // makes the history button clickable and search for the city again
     cityEl.click(function (event) {
       console.log("you clicked on...")
-      console.log(event.target)
+      // console.log(event.target)
       event.preventDefault();
       $(".current").empty()
       $(".weather-container").empty()

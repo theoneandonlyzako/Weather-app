@@ -157,8 +157,7 @@ $(window).on("load", function () {
       var searchResult = $("#cityInput").val().trim()
       fetchWeather(cityName)
     })
-    // container.append(cityEl)
-    
+    container.append(cityEl)
     // Clears the input form once button is clicked
     document.getElementById("cityInput").value = "";
   })

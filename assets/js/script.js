@@ -22,7 +22,7 @@ $(window).on("load", function () {
     )
       .then((response) => response.json())
       .then((data) => fiveDay(data));
-      
+
   }
 
   // displays current
@@ -40,8 +40,8 @@ $(window).on("load", function () {
 
     // Dynamically builds the current temp area
     var container = $('.current')
-    var parentDiv = $('<div class="day">')
-    var cityEl = $('<h2 class="city"></h2>').text("Currently in: " + name)
+    var parentDiv = $('<div class="current-result">')
+    var cityEl = $('<h2 class="city"></h2>').text(name)
     var iconDiv = $('<div id="icon">')
     var tempDiv = $('<div class="temp"></div>').text(temp + "°")
     var imgEl = $('<img class="icon">').attr("src", "http://openweathermap.org/img/wn/" + icon + ".png")
@@ -75,7 +75,9 @@ $(window).on("load", function () {
       var count = 1;
       // stores values from api
       var name = data.list[i].dt_txt
-      // .dateFormat('dd-mm-yy');
+      name = moment(name).format("MM/DD/YYYY");
+
+      // .format("MM/DD/YYYY");
       console.log(name);
       var icon = data.list[i].weather[0].icon;
       var temp = data.list[0].main.temp;

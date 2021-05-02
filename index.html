@@ -1,72 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <title>Weather App</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        
+        <title>Weather App</title>
+    </head>
 
-<body>
-
-    <div class="container" id=current-temp>
+    <body>
 
         <header>
             <h1 class="head" id="head">
-               5 Day forecast Weather app
+            5 Day forecast Weather app
             </h1>
 
         </header>
 
-        <div class="search-area">
+        <div class="container">
 
-            <div class="text-input">
-                <input placeholder="enter city" type="text" class="text-area" id="cityInput">
-                <button class="btn" autofocus="true" type="submit" id="save-btn">Search City</button>
+            <div class="search-area">
+
+                <div class="text-input">
+                    <input placeholder="enter city" type="text" class="text-area" id="cityInput">
+                    <button class="btn" autofocus="true" type="submit" id="save-btn">Search City</button>
+                </div>
+
+                
+
+                <div class="popular">
+                    <h2>
+                        Popular cities
+                    </h2>
+                    <button class="btn" id="sf-btn">San Francisco</button>
+                    <button class="btn" id="la-btn">Los Angeles</button>
+                    <button class="btn" id="ny-btn">New York City</button>
+                    <button class="btn" id="dv-btn">Denver</button>
+
+                    <div class="popular-container"></div>
+                </div>
+
+                <div class="history-area">
+                    <h2 class="history">
+                        Your History
+                    </h2>                    
+                </div>
+
             </div>
 
+            <div class="results">
+                <div class="current"></div>
+                <div class="weather-container"></div>
+            </div>
             
 
-            <div class="popular">
-                <h2>
-                    Popular cities
-                </h2>
-                <button class="btn" id="sf-btn">San Francisco</button>
-                <button class="btn" id="la-btn">Los Angeles</button>
-                <button class="btn" id="ny-btn">New York City</button>
-                <button class="btn" id="dv-btn">Denver</button>
-
-                <div class="popular-container"></div>
-            </div>
-
-            <div class="history-area">
-                <h2 class="history">
-                   Your History
-                </h2>
-                
-            </div>
-
         </div>
+        <footer></footer>
+    </body>
 
-        <div class="current">
-
-        </div>
-
-        <div class="weather-container">
-
-
-        </div>
-
-    </div>
-
-    <footer id="footer">Contact the $%!* out of things</footer>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <script src="assets/js/script.js" type="text/javascript"></script>
-</body>
 
 </html>

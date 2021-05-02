@@ -1,4 +1,5 @@
 * {
+    flex-wrap: wrap;
     margin: 0px;
     padding: 5px;
     box-sizing: border-box;
@@ -6,13 +7,9 @@
 }
 
 body {
-    background-image: url("https://en.nn.najah.edu/media/uploads/weblog/2020/09/01/new-history-forecast-bulk.png");
+    background-color: rgba(0, 0, 0, .5);
     flex-wrap: wrap;
-    background-size: cover;
-    height: fit-content;
-    background-position: bottom;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 #head {
@@ -21,6 +18,10 @@ body {
     display: flex;
     margin-left: 10px;
 }
+
+.text-area {
+    height: 40px;
+  }
 
 .container {
     position: relative;
@@ -33,78 +34,84 @@ body {
     flex-wrap: wrap;
 }
 
+.results {
+    align-content: top;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    /* width: 60vw; */
+    /* height:80vh; */
+}
+
+.current .day h2 {
+    font-size: 2.2rem;
+}
+
+.weather-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 100vw;
+    height:40vh;
+}
+
+
 .search-area {
+    
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 20%; 
+    max-width: 40%;
+    min-width: 20%; 
     float:left; 
-    height:90vh;
 }
 
-.search-area .day {
-    justify-content: center;
+/* .history {
+    border-radius: 8px;
+    max-width: 200px;
+    min-width: 150px;
+} */
+
+.history-area {
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    max-width: 200px;
+    min-width: 100%;
+}
+
+/* .search-area .day {
     flex-direction: row;
     min-width: 80px;
     max-width: 250px;
     margin: 4px;
     padding: 10px;
     background-color: royalblue;
-    /* background-image: url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNlZSUyMGZyb20lMjB0aGUlMjBza3l8ZW58MHx8MHx8&w=1000&q=80); */
     flex-wrap: wrap;
-    /* background-size: 100%; */
     height: fit-content;
     background-position: top;
     background-attachment: fixed;
     background-repeat: no-repeat;
     border-radius: 7px;
-}
+} */
 
-.weather-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 80%; 
-    float:right; 
-    height:40vh;
-}
-
-.history {
-    background-color: rgba(0, 0, 0, .2);
-    border-radius: 8px;
-}
 
 .popular {
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: rgba(0, 0, 0, .2);
     border-radius: 8px;
     max-width: 200px;
+    min-width: 100%;
 }
 
 .current {
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 80%; 
-    /* float:center;  */
-    height:40vh;
-}
-
-.current .day {
-    /* flex-direction: row; */
-    width: 800px;
-    max-width: 180px;
-    margin: 0px;
-    padding: 10px;
-    background-color: royalblue;
-    /* background-image: url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNlZSUyMGZyb20lMjB0aGUlMjBza3l8ZW58MHx8MHx8&w=1000&q=80); */
-    flex-wrap: wrap;
-    /* background-size: 100%; */
-    height: fit-content;
-    background-position: top;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    border-radius: 7px;
+    margin: 0;
+    padding: 0;
+    justify-content: left;
+    width: 100vw;
+    height:29vh;
 }
 
 #icon {
@@ -112,20 +119,24 @@ body {
 }
 
 .day {
-    /* align-content: center; */
-    /* flex-direction: row; */
+    align-content: center;
     min-width: 80px;
-    max-width: 180px;
+    max-width: 170px;
     margin: 4px;
     padding: 20px;
     background-color: royalblue;
-    /* background-image: url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNlZSUyMGZyb20lMjB0aGUlMjBza3l8ZW58MHx8MHx8&w=1000&q=80); */
     flex-wrap: wrap;
-    /* background-size: 100%; */
     height: fit-content;
     background-position: top;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    border-radius: 7px;
+}
+
+.current-result {
+    width: 100%;
+    background-color: royalblue;
+    background-position: top;
     border-radius: 7px;
 }
 
@@ -188,9 +199,30 @@ p {
     text-shadow: rgba(0, 0, 0, .5);
 }
 
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: rem;
+footer {
+    display: block;
+    width: 100vw;
 }
+
+@media only screen and (max-width: 730px) {
+    body {
+      background-color: lightblue;
+      flex-wrap: wrap;
+    }
+.results {
+    margin: 4;
+    width: 100vw;
+    align-content: top;
+}
+
+.current {
+ height: 42vh;
+}
+
+.current .day h2 {
+    font-size: 1.7rem;
+}
+
+.container
+
+  }

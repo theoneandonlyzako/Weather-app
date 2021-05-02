@@ -1,13 +1,16 @@
 // let weather = {
 $(window).on("load", function () {
+  // Clears local storage
+  localStorage.clear();
+
   // console.log("Fresh Window loaded");
 
   var apiKey = "ede1a7baf3cbf299883575c9bf004bbc"
   function fetchWeather(city) {
-    
+
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey
-    
+
     )
       .then((response) => response.json())
       .then((data) => displayWeather(data))
@@ -23,14 +26,14 @@ $(window).on("load", function () {
   // displays current
   function displayWeather(data) {
     console.log("current day displayed");
-    
+
     // stores values from api
     var name = data.name;
     var icon = data.weather[0].icon;
     var temp = data.main.temp;
     var humidity = data.main.humidity;
     var speed = data.wind.speed;
-  
+
     console.log(name, icon, temp, humidity, speed);
 
     // Dynamically builds the current temp area
@@ -64,12 +67,12 @@ $(window).on("load", function () {
   function fiveDay(data) {
     // debugger;
     // console.log(data);
-    for (let i = 0; i < data.list.length; i += 8) {  
+    for (let i = 0; i < data.list.length; i += 8) {
 
       //  console.log(data.list.dt_txt);
-      var count = 1;   
+      var count = 1;
       // stores values from api
-      var name = data.list[i].dt_txt; 
+      var name = data.list[i].dt_txt;
       // .format('dd-m-yy');
       // console.log(name);
       var icon = data.list[i].weather[0].icon;
@@ -113,8 +116,8 @@ $(window).on("load", function () {
       // $(".wind").text("wind " + speed);
       // $(".uv").text(uv);
       count++;
-     
-      
+
+
     }
 
     // localStorage.setItem("histName", name);
@@ -126,7 +129,7 @@ $(window).on("load", function () {
     // var histEl = $('<button class="hist-btn"></button>')
     // histContainer.append(histEl)
   }
-  
+
 
   // fetches the weather when btn is clicked
   $("#save-btn").on("click", function (event) {
@@ -137,13 +140,27 @@ $(window).on("load", function () {
     fetchWeather(searchResult)
     // console.log(searchResult);
     window.localStorage.setItem("cityName", JSON.stringify(searchResult));
-    var cityName = JSON.parse(window.localStorage.getItem("cityName"));    
+    var cityName = JSON.parse(window.localStorage.getItem("cityName"));
     // console.log(cityName);
 
+    // Dynamically adds a history button of the city just searched
     var container = $('.history-area')
-    var cityEl = $('<button class="btn" id="'+cityName+'"></button>').text(cityName)
+    var cityEl = $('<button class="btn" id="' + cityName + '"></button>').text(cityName)
 
-    container.append(cityEl)
+    // makes the history button clickable and search for the city again
+    cityEl.click(function (event) {
+      console.log("you clicked on...")
+      console.log(event.target)
+      event.preventDefault();
+      $(".current").empty()
+      $(".weather-container").empty()
+      var searchResult = $("#cityInput").val().trim()
+      fetchWeather(cityName)
+    })
+    // container.append(cityEl)
+    
+    // Clears the input form once button is clicked
+    document.getElementById("cityInput").value = "";
   })
 
   $("#sf-btn").on("click", function (event) {
@@ -152,7 +169,7 @@ $(window).on("load", function () {
     $(".weather-container").empty()
     fetchWeather("san francisco")
     // console.log(searchResult);
-  
+
   })
 
   $("#la-btn").on("click", function (event) {
@@ -161,7 +178,7 @@ $(window).on("load", function () {
     $(".weather-container").empty()
     fetchWeather("los angeles")
     // console.log(searchResult);
-  
+
   })
 
   $("#ny-btn").on("click", function (event) {
@@ -170,7 +187,7 @@ $(window).on("load", function () {
     $(".weather-container").empty()
     fetchWeather("new york")
     // console.log(searchResult);
-  
+
   })
 
   $("#dv-btn").on("click", function (event) {
@@ -179,44 +196,8 @@ $(window).on("load", function () {
     $(".weather-container").empty()
     fetchWeather("denver")
     // console.log(searchResult);
-  
+
   })
-
-  var cityName = JSON.parse(window.localStorage.getItem("cityName")); 
-
-  document.getElementById(cityName).onclick(function (event) {
-    console.log("foo");
-    
-    event.preventDefault();
-    $(".current").empty()
-    $(".weather-container").empty()
-    console.log(JSON.parse(window.localStorage.getItem("cityName")));
-    
-    var histCity = JSON.parse(window.localStorage.getItem("cityName")); 
-    console.log(histCity);
-    fetchWeather(histCity)
-  
-    console.log("History Button clicked");
-  
-  })
-
-  // var idCity = JSON.parse(window.localStorage.getItem("cityName"));
-  // $("#cityName").on("click", function (event) {
-  //   console.log("foo");
-    
-  //   event.preventDefault();
-  //   $(".current").empty()
-  //   $(".weather-container").empty()
-  //   console.log(JSON.parse(window.localStorage.getItem("cityName")));
-    
-  //   var histCity = JSON.parse(window.localStorage.getItem("cityName")); 
-  //   console.log(histCity);
-  //   fetchWeather(histCity)
-  
-  //   console.log("History Button clicked");
-  
-  // })
-
 
   // fetchWeather("benicia")
 })
